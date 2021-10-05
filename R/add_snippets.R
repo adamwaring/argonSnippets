@@ -1,13 +1,13 @@
 #' add Shiny argonDash snippets to Rstudio snippets file
 #'
-#' @param rs path to rstudio snippets file default: "~/.R/snippets/r.snippets"
+#' @param rs path to rstudio snippets file default: "%appdata%/Roaming/RStudio/snippets/r.snippets"
 #' @return NULL
 #' @examples
 #' argonSnippets::add_snippets()
 #' @export
 
 
-add_snippets <- function(rs = "~/.R/snippets/r.snippets"){
+add_snippets <- function(rs = paste0(fs::path_expand("~"), "/AppData/Roaming/RStudio/snippets/R.snippets")){
 
   res <- FALSE
 
@@ -42,3 +42,5 @@ add_snippets <- function(rs = "~/.R/snippets/r.snippets"){
     return(invisible(res))
   }
 }
+
+
