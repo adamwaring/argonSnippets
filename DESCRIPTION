@@ -1,0 +1,14 @@
+Package: argonSnippets
+Type: Package
+Title: Add snippets to build an ArgonDash UI
+Version: 0.1.0
+Author: Adam Waring
+Maintainer: Adam Waring <adamwaring@hotmail.co.uk>
+Description: This package has one function add_snippets() which was copied from ThinkR-open/shinysnippets. It adds snippets for the body, header, sidebar, navbar and footer main elements of the argonDash UI. It also adds snippets for cards, info-card, tabsets and tables. Please see: https://rinterface.github.io/argonDash/ and https://github.com/ThinkR-open
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.2
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3

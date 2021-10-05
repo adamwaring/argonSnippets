@@ -1,0 +1,176 @@
+snippet argon_header
+      argonHeader <- argonDash::argonDashHeader(
+        gradient = TRUE,
+        color = "primary",
+        separator = FALSE,
+        separator_color = "secondary",
+        bottom_padding = 4,
+        top_padding = 6,
+        background_img = NULL,
+        mask = FALSE,
+        opacity = 8,
+        height = 600
+
+      )
+
+snippet argon_footer
+      argonFooter <- argonDash::argonDashFooter(
+        copyrights = "@Name, Year",
+        src = "#github repo",
+        argonFooterMenu(
+          argonFooterItem("Social Media", src = ""),
+          argonFooterItem("Social Media", src = "")
+        )
+      )
+
+snippet argon_sidebar
+      argonSidebar <- argonDash::argonDashSidebar(
+        vertical = TRUE,
+        skin = "light",
+        background = "white",
+        size = "md",
+        side = "left",
+        id = "my_sidebar",
+        brand_url = "http://www.google.com",
+        brand_logo = "https://demos.creative-tim.com/argon-design-system/assets/img/brand/blue.png",
+
+        argonDash::argonSidebarHeader(title = "Main Menu"),
+        argonDash::argonSidebarMenu(
+          argonDash::argonSidebarItem(
+            tabName = "tab1",
+            icon = argonR::argonIcon(name = "tv-2", color = "info"),
+            "Argon Tab 1"
+          )
+        ),
+        argonSidebarDivider(),
+        argonSidebarHeader(title = "Other Items")
+      )
+
+snippet argon_navbar
+    argonNav <- argonDash::argonDashNavbar(
+      argonDash::argonDropNav(
+        title = "Dropdown Menu",
+        src = "https://demos.creative-tim.com/argon-dashboard/assets/img/theme/team-4-800x800.jpg",
+        orientation = "right",
+        argonDropNavTitle(title = "Welcome!"),
+        argonDropNavItem(
+          title = "Item 1",
+          src = "https://www.google.com",
+          icon = argonR::argonIcon("single-02")
+        ),
+        argonDash::argonDropNavItem(
+          title = "Item 2",
+          src = NULL,
+          icon = argonR::argonIcon("settings-gear-65")
+        ),
+        argonDash::argonDropNavDivider(),
+        argonDash::argonDropNavItem(
+          title = "Item 3",
+          src = "#",
+          icon = argonR::argonIcon("calendar-grid-58")
+        )
+      )
+    )
+
+snippet argon_ui
+    argon_ui = argonDash::argonDashPage(
+      title = "Argon Dashboard Demo",
+      author = "Name",
+      description = "Argon Dash Test",
+      sidebar = argonSidebar,
+      navbar = argonNav,
+      header = argonHeader,
+      body = argonDash::argonDashBody(
+        argonDash::argonTabItems(
+
+          # table items here
+
+        )
+      ),
+      footer = argonFooter
+    )
+
+snippet argon_card
+    argonCard(
+      title = NULL,
+      src = NULL,
+      hover_lift = T,
+      shadow = T,
+      shadow_size = 2,
+      hover_shadow = T,
+      border_level = 2,
+      icon = NULL,
+      btn_text = "More",
+      status = "primary",
+      background_color = NULL,
+      gradient = T,
+      floating = T,
+      width = 12,
+
+    )
+
+snippet argon_infocard
+    argonInfoCard(
+          value = "350,897",
+          title = "TRAFFIC",
+          stat = 3.48,
+          stat_icon = icon("arrow-up"),
+          description = "Since last month",
+          icon = argonIcon("planet"),
+          icon_background = "danger",
+          hover_lift = TRUE
+        )
+
+snippet argon_tabset
+    argonTabSet(
+            id = "tab-1",
+            card_wrapper = TRUE,
+            horizontal = TRUE,
+            circle = FALSE,
+            size = "sm",
+            width = 12,
+            iconList = lapply(X = 1:3, FUN = argonIcon, name = "atom"),
+            argonTab(
+              tabName = "Tab 1",
+              active = FALSE,
+              tabText1
+            ),
+            argonTab(
+              tabName = "Tab 2",
+              active = TRUE,
+              tabText2
+            ),
+            argonTab(
+              tabName = "Tab 3",
+              active = FALSE,
+              tabText3
+            )
+          )
+
+snippet argon_table
+    argonDash::argonTable(
+
+        headTitles = c(
+          "COL1",
+          "COL2"
+        ),
+
+        lapply(1:N, function(i) {
+
+          argonDash::argonTableItems(
+
+            argonDash::argonTableItem(
+
+              i
+
+
+            ),
+            argonDash::argonTableItem(
+
+              i
+
+            )
+          )
+
+        })
+      )
